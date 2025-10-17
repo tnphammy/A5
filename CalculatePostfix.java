@@ -41,7 +41,7 @@ public class CalculatePostfix {
                 }
                 // throw error if stack not currently empty (Too many elements)
                 if (!calc.isEmpty()) {
-                    throw new IllegalArgumentException("The current operation has too many elements.");
+                    throw new IllegalArgumentException("The current operation has elements without an operator.");
                 }
                 // calculate result - push to stack 
                 else {
@@ -71,6 +71,11 @@ public class CalculatePostfix {
                 }
 
             }
+        }
+        // Outside of calculation
+        // throw error if stack not currently empty (Too many elements)
+        if (!calc.isEmpty()) {
+            throw new IllegalArgumentException("The current operation has elements without an operator.");
         }
         // 3. Return final result 
         return calc.pop();
