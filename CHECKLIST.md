@@ -15,9 +15,9 @@ You should also make sure that your logic and ideas are clearly expressed to ful
 
 Postfix.java:
 
-_____ 1 pts: Pushes numeric tokens onto the stack
+YES 1 pts: Pushes numeric tokens onto the stack
 
-_____ 2 pts: Processes operators by popping & combining numbers
+YES 2 pts: Processes operators by popping & combining numbers
 
 _____ 2 pts: Produces correct answer to any valid postfix expression
 
