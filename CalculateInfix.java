@@ -44,7 +44,6 @@ public class CalculateInfix {
                 // Case 2: Right parenthesis ')'
                 else if (token.equals(')')) {
                     while ((!stack.isEmpty()) && (!stack.peek().equals('('))) {
-                        System.out.println("Peeking at the stack: " + stack.peek());
                         // Pop operators off stack until reaches '('
                         translatedQueue.add(stack.pop());
                     }
@@ -71,7 +70,7 @@ public class CalculateInfix {
                     // Compare operators
                     else {
                         // while P(S) >= P(Q) -> pop P(S) into output
-                        while (priorityLevel((Character)stack.peek()) >= priorityLevel((Character)token)) {
+                        while (priorityLevel((Character)stack.peek()) > priorityLevel((Character)token)) {
                             translatedQueue.add(stack.pop());
                         }
                         // Add P(Q) to Stack

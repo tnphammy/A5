@@ -61,6 +61,11 @@ public class CalculatePostfix {
                 else if (token.equals('%')) {
                     result = first % second;
                 }
+                // Exponent
+                else if (token.equals('^')) {
+                    System.out.println("base: " + first + " exponent: " + second);
+                    result = Math.pow(first, second);
+                }
                 // Push result to stack
                 calc.push(result);
             }
