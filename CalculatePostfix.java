@@ -39,45 +39,40 @@ public class CalculatePostfix {
                 else {
                     first = calc.pop();
                 }
-                // throw error if stack not currently empty (Too many elements)
-                if (!calc.isEmpty()) {
-                    throw new IllegalArgumentException("The current operation has elements without an operator.");
+                // Calculates
+                Double result = 0.0;
+                // Addition
+                if (token.equals('+')) {
+                    result = first + second;
                 }
-                // calculate result - push to stack 
-                else {
-                    Double result = 0.0;
-                    // Addition
-                    if (token.equals('+')) {
-                        result = first + second;
-                    }
-                    // Subtraction
-                    else if (token.equals('-')) {
-                        result = first - second;
-                    }
-                    // Multiplication
-                    else if (token.equals('*')) {
-                        result = first * second;
-                    }
-                    // Division
-                    else if (token.equals('/')) {
-                        result = first / second;
-                    }
-                    // Division (Modular)
-                    else if (token.equals('%')) {
-                        result = first % second;
-                    }
-                    // Push result to stack
-                    calc.push(result);
+                // Subtraction
+                else if (token.equals('-')) {
+                    result = first - second;
                 }
-
+                // Multiplication
+                else if (token.equals('*')) {
+                    result = first * second;
+                }
+                // Division
+                else if (token.equals('/')) {
+                    result = first / second;
+                }
+                // Division (Modular)
+                else if (token.equals('%')) {
+                    result = first % second;
+                }
+                // Push result to stack
+                calc.push(result);
             }
+
         }
+        Double finalResult = calc.pop();
         // Outside of calculation
         // throw error if stack not currently empty (Too many elements)
         if (!calc.isEmpty()) {
-            throw new IllegalArgumentException("The current operation has elements without an operator.");
+            throw new IllegalArgumentException("The current operation has elements without an operator yoo.");
         }
         // 3. Return final result 
-        return calc.pop();
+        return finalResult;
     }
 }
